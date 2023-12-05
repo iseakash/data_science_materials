@@ -27,19 +27,19 @@ All content related to data science for quick reference.
 	12. Sample Vs Population
 
 ## Machine Learning: 
-	**Supervised**
-	1. Linear Regression
-	2. Logistic Regression
-	3. Decision Tree
-	4. Random Forest
-	5. K-Nearest Neighbour
-	6. Naïve Bayes
-	# Unsupervised
-	7. K-means Clustering
-	8. Hierarchical Clustering
-	9. DB-Scan Clustering
-	10. PCA
-	11. LDA
+	### Supervised
+		1. Linear Regression
+		2. Logistic Regression
+		3. Decision Tree
+		4. Random Forest
+		5. K-Nearest Neighbour
+		6. Naïve Bayes
+	### Unsupervised
+		7. K-means Clustering
+		8. Hierarchical Clustering
+		9. DB-Scan Clustering
+		10. PCA
+		11. LDA
 
 ## Basics of Maths: 
 	1. Linear Algebra
