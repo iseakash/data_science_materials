@@ -3,6 +3,16 @@ import pandas as pd
 
 table = pd.DataFrame({"Col 1":[1,2,3,4,5,6], "col 2": [11,12,13,14,15,16]})
 
+## Removing Streamlit Hamburger & Footer
+st.markdown("""
+<style>
+.st-emotion-cache-czk5ss.e16jpq800
+{
+    visibility:hidden;            
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("Hi! Welcome to Streamlit Web Page.")
 st.header("Tell me how can I help you.")
 st.subheader("You can always choose to be happy.")

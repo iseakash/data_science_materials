@@ -27,3 +27,20 @@
 1. To define an image, use this: ```st.image("image file name")```
 2. To define an audio, use this: ```st.audio("audio file name")```
 3. To define a video, use this: ```st.video("video file name")```
+
+## Removing Streamlit Hamburger & Footer
+1. To remove or hide the hamsburger or footer, first INSPECTthe  classname of the hamsburgeror or footer
+2. use this ("st-emotion-cache-czk5ss.e16jpq800": hamsburger class name):
+```
+st.markdown("""
+<style>
+.st-emotion-cache-czk5ss.e16jpq800
+{
+    visibility:hidden;            
+}
+</style>
+""", unsafe_allow_html=True)
+```
+
+## Basic Interactive Widgets of Streamlit
+1. 
