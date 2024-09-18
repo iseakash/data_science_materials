@@ -22,3 +22,8 @@
 3. To define value = "120ms⁻¹", use this with SPACE or ENTER: ```"120ms\^-1"```
 4. To define a table which is static, use this: ```st.table(table)```
 5. To define a dataframe which is more dynamic, use this: ```st.dataframe(table)```
+
+##  Media Widgets of Streamlit
+1. To define an image, use this: ```st.image("image file name")```
+2. To define an audio, use this: ```st.audio("audio file name")```
+3. To define a video, use this: ```st.video("video file name")```

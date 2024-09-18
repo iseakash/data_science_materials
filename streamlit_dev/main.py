@@ -31,3 +31,8 @@ st.write("### It can implement multiple functions like markdown, header, code, l
 st.metric(label="Wind Speed", value="120ms⁻¹", delta="1.4ms⁻¹")
 st.table(table) # It is static
 st.dataframe(table) # It allows us to sort the data
+
+##  Media Widgets of Streamlit
+st.image("image_test.png", caption="This is my image.", width=680)
+st.audio("audio_test.m4a")
+st.video("video_test.mp4")
