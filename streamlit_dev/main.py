@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+
+table = pd.DataFrame({"Col 1":[1,2,3,4,5,6], "col 2": [11,12,13,14,15,16]})
 
 st.title("Hi! Welcome to Streamlit Web Page.")
 st.header("Tell me how can I help you.")
@@ -21,3 +24,10 @@ def test(text):
     return 0;
     """
 st.code(code, language="python")
+
+st.write("### It can implement multiple functions like markdown, header, code, latex, etc.")
+
+# Matrix Function: To display different types of values.
+st.metric(label="Wind Speed", value="120ms⁻¹", delta="1.4ms⁻¹")
+st.table(table) # It is static
+st.dataframe(table) # It allows us to sort the data
