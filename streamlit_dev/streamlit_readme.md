@@ -10,7 +10,10 @@
 3. To define a header, use this: ```st.header("Message")```.
 4. To define a subheader, use this: ```st.subheader("Message")```. 
 5. To define a text, use this: ```st.text("Message")```.
-6. To define a markdown, use this: ```st.markdown("> **Bold Message**, *Italic Message* ")```. [Refer here for different markdown elements.](https://www.markdownguide.org/cheat-sheet/)
+6. To define a markdown, use this:
+    - ```st.markdown("> **Bold Message**, *Italic Message* ")```.
+    - ```st.markdown("<h1 style='text-align: center'>label</h1>", unsafe_allow_html=True)```
+    - [Refer here for different markdown elements.](https://www.markdownguide.org/cheat-sheet/)
 7. To define a mathematical formula, use this: ```st.latex("Formula")```. [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
 8. To define a json body, use this: ```st.json("Enter json message")```.
 9. To define a python code, use this: ```st.code("Enter code")```.
@@ -43,4 +46,70 @@ st.markdown("""
 ```
 
 ## Basic Interactive Widgets of Streamlit
-1. 
+1. To define a checkbox, use this: ```st.checkbox("label", value=True, on_change=function_name_to_be_called, key="checker")```. *Note* - It returns values like ```[True, False]```.
+    - Use ```st.session_state.checker``` to fetch the checkbox state using *key*.
+2. To define a radio, use this: ```st.radio("label", options=("US","UK","IND"))```. *Note* - It returns only one selected value.
+3. To define a button, use this: ```st.button("label", on_click=function_name_to_be_called)```. *Note* - It calls the mentioned function.
+4. To define a selectbox, use this: ```st.selectbox("label", options=("US","UK","IND"))```. *Note* - It returns only one selected value.
+5. To define a multiselect, use this: ```st.multiselect("label", options=("US","UK","IND"))```. *Note* - It returns multiple selected values.
+
+## File Uploader Widget of Streamlit
+1. To define a file_uploader, use this: ```st.file_uploader("label", type=["png","jpg"], accept_multiple_files=True)```. *Note* - To upload single file, use ```accept_multiple_files=False``` & to upload a video file, use ```type="mp4"```.
+2. To define a slider, use this: ```st.slider("label",  min_value=50, max_value=75, value=61)```.
+    - Slider also has callback properties using on_change feature.
+    - Slider is different from select_slider.
+2. To define a text,
+    - Use this: ```st.text_input("label",  max_chars=100)```
+    - For more descriptive text , use this: ```st.text_area("label")```
+    - *Note* : Use ```Enter``` to move to next line in ```text_area``` which is not possible in ```text_input```
+3. To define a date_input, use this: ```st.date_input("label")```
+4. To define a time_input, use this: ```st.time_input("label")```
+
+## Timer App With Progress Bar
+1. To define a progress bar, use this: ```st.progress("integer value")```
+2. To empty the status, use this: ```st.empty()```
+    - Use the combination of ```status = st.empty() & status.write(value)``` to display the progress bar value.
+
+## Streamlit Forms
+1. To create a form, use either of the two codes:
+    ```python
+    form = st.form("key")
+    form.text_input("label")
+    form.form_submit_button("label")
+    ``` 
+    ```python
+    with st.form("key"):
+        st.text_input("label")
+        st.form_submit_button("label")
+    ```
+    - Without ````form_submit_button````, the form will give error in both case.
+2. To create a form with two columns, use this:
+    ```python
+    with st.form("key", clear_on_submit=True):
+        col1, col2 = st.columns(2)
+        col1.text_input("label1")
+        col2.text_input("label2")
+        st.form_submit_button("label")
+    ```
+3. After form submission to display a message, use this:
+    - ```st.warning("message")```
+    - ```st.success("message")```
+    - ```st.error("message")```
+
+## Sidebar & Graphs
+1. ```st.sidebar.write("label")```
+2. To create a chart, use this:
+    ```python
+    fig = plt.figure()
+    plt.style.use("https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle")
+    plt.plot(x, y, '--')
+    st.write(fig)
+    ```
+
+## References:
+- [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
+- [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
+- [Reference to matplotlib plots style config](https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle)
+- [Reference to set streamlit page config](https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config)
+- [Reference for icons](https://www.webfx.com/tools/emoji-cheat-sheet/#)
+- [unsplash-free-photos](https://unsplash.com/s/photos/free-images)
