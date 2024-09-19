@@ -105,3 +105,11 @@ st.markdown("""
     plt.plot(x, y, '--')
     st.write(fig)
     ```
+
+## References:
+- [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
+- [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
+- [Reference to matplotlib plots style config](https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle)
+- [Reference to set streamlit page config](https://docs.streamlit.io/develop/api-reference/configuration/st.set_page_config)
+- [Reference for icons](https://www.webfx.com/tools/emoji-cheat-sheet/#)
+- [unsplash-free-photos](https://unsplash.com/s/photos/free-images)
