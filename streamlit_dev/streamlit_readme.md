@@ -43,4 +43,9 @@ st.markdown("""
 ```
 
 ## Basic Interactive Widgets of Streamlit
-1. 
+1. To define a checkbox, use this: ```st.checkbox("label", value=True, on_change=function_name_to_be_called, key="checker")```. *Note* - It returns values like ```[True, False]```.
+    - Use ```st.session_state.checker``` to fetch the checkbox state using *key*.
+2. To define a radio, use this: ```st.radio("label", options=("US","UK","IND"))```. *Note* - It returns only one selected value.
+3. To define a button, use this: ```st.button("label", on_click=function_name_to_be_called)```. *Note* - It calls the mentioned function.
+4. To define a selectbox, use this: ```st.selectbox("label", options=("US","UK","IND"))```. *Note* - It returns only one selected value.
+5. To define a multiselect, use this: ```st.multiselect("label", options=("US","UK","IND"))```. *Note* - It returns multiple selected values.

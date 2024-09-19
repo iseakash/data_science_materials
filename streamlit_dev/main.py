@@ -46,3 +46,27 @@ st.dataframe(table) # It allows us to sort the data
 st.image("image_test.png", caption="This is my image.", width=680)
 st.audio("audio_test.m4a")
 st.video("video_test.mp4")
+
+## Basic Interactive Widgets of Streamlit
+def change():
+    print(st.session_state.checker)
+state = st.checkbox("Tick me", value=True, on_change=change, key="checker")
+if state==True:
+    st.write("You are ticked me, Great!")
+else:
+    pass
+
+# This radio button also support unique identifier, on_change, callback.
+radio_btn = st.radio("In which country do you live?", options=("US","UK","IND"))
+print(radio_btn)
+
+def btn_click():
+    print("Button Clicked.")
+btn = st.button("Click Me!", on_click=btn_click)
+
+# Select box allows us to select single object while multiple select box allows us to select multiple objects.
+select = st.selectbox("What is your favourite car?", options=("BMW", "AUDI", "FERRARI"))
+print(select)
+
+multi_select = st.multiselect("What is your favourite tech brand?", options=("Microsoft", "Apple", "Amazon", "Google"))
+st.write("You selected: ", multi_select)
