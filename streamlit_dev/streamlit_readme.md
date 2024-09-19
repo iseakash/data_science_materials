@@ -73,9 +73,9 @@ st.markdown("""
 ## Streamlit Forms
 1. To create a form, use either of the two codes:
     ```python
-      form = st.form("key")
-      form.text_input("label")
-      form.form_submit_button("label")
+    form = st.form("key")
+    form.text_input("label")
+    form.form_submit_button("label")
     ``` 
     ```python
     with st.form("key"):
@@ -85,7 +85,7 @@ st.markdown("""
     - Without ````form_submit_button````, the form will give error in both case.
 2. To create a form with two columns, use this:
     ```python
-      with st.form("key", clear_on_submit=True):
+    with st.form("key", clear_on_submit=True):
         col1, col2 = st.columns(2)
         col1.text_input("label1")
         col2.text_input("label2")
@@ -95,3 +95,13 @@ st.markdown("""
     - ```st.warning("message")```
     - ```st.success("message")```
     - ```st.error("message")```
+
+## Sidebar & Graphs
+1. ```st.sidebar.write("label")```
+2. To create a chart, use this:
+    ```python
+    fig = plt.figure()
+    plt.style.use("https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle")
+    plt.plot(x, y, '--')
+    st.write(fig)
+    ```

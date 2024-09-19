@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import time as ts
 from datetime import time
+from matplotlib import pyplot as plt
+import numpy as np
 
 table = pd.DataFrame({"Col 1":[1,2,3,4,5,6], "col 2": [11,12,13,14,15,16]})
 
@@ -139,4 +141,27 @@ with st.form("Form 2", clear_on_submit=True):
             st.warning("Please fill above fields")
         else:
             st.success("Submitted Successfully")
-            
+
+## Sidebar & Graphs In Streamlit
+x = np.linspace(0,10,100)
+bar_x = np.array([1,2,3,4,5])
+opt = st.sidebar.radio("Select any chart:", options=("Line", "Bar", "H-Bar"))
+if opt == "Line":
+    st.markdown("<h3 style='text-align: center'>Line Chart</h3>", unsafe_allow_html=True)
+    fig = plt.figure()
+    plt.style.use("https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle")
+    plt.plot(x, np.sin(x))
+    plt.plot(x, np.cos(x), '--')
+    st.write(fig)
+elif opt == "Bar":
+    st.markdown("<h3 style='text-align: center'>Bar Chart</h3>", unsafe_allow_html=True)
+    fig = plt.figure()
+    plt.style.use("https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle")
+    plt.bar(bar_x, bar_x*10)
+    st.write(fig)
+else:
+    st.markdown("<h3 style='text-align: center'>Horizontal Bar Chart</h3>", unsafe_allow_html=True)
+    fig = plt.figure()
+    plt.style.use("https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-dark.mplstyle")
+    plt.barh(bar_x*10, bar_x)
+    st.write(fig)
