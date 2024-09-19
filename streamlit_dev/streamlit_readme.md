@@ -63,3 +63,6 @@ st.markdown("""
 4. To define a time_input, use this: ```st.time_input("label")```
 
 ## Timer App With Progress Bar
+1. To define a progress bar, use this: ```st.progress("integer value")```
+2. To empty the status, use this: ```st.empty()```
+    - Use the combination of ```status = st.empty() & status.write(value)``` to display the progress bar value.

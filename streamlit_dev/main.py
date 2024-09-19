@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import time as ts
+from datetime import time
 
 table = pd.DataFrame({"Col 1":[1,2,3,4,5,6], "col 2": [11,12,13,14,15,16]})
 
@@ -88,7 +90,24 @@ st.write(slider_value)
 text = st.text_input("Enter your course title.", max_chars=100)
 text_area = st.text_area("Course Description:")
 date_input = st.date_input("Enter the date")
-time_input = st.time_input("Enter time")
+time_input = st.time_input("Enter time", value=time(0,0,0))
 st.write(text, text_area, date_input, time_input)
 
-## Timer App With Progress Bar
+# To complete the progress bar in certain time period
+def converter(value):
+    m,s,ms=value.split(":")
+    return int(m)*60+int(s)+int(ms)/1000
+# print(type(time_input))
+if str(time_input) == "00:00:00":
+    st.write("Please set the timer")
+else:
+    sec = converter(str(time_input))
+    print(sec)
+    perc = sec/100
+    ## Timer App With Progress Bar
+    progress_status = st.empty()
+    bar = st.progress(0)
+    for i in range(100):
+        bar.progress(i+1)
+        progress_status.write(str(i+1) + "%")
+        ts.sleep(perc)
