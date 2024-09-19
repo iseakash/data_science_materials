@@ -70,3 +70,25 @@ print(select)
 
 multi_select = st.multiselect("What is your favourite tech brand?", options=("Microsoft", "Apple", "Amazon", "Google"))
 st.write("You selected: ", multi_select)
+
+## File Uploader Widget of Streamlit
+st.title("Uploading Files")
+st.markdown("---")
+uploaded_image = st.file_uploader("Please upload an image", type=["png","jpg"],
+                                  accept_multiple_files=True) # type = "mp4" for video.
+if uploaded_image is not None:
+    for img in uploaded_image:
+        st.image(img, caption="This is the uploaded image.", width=580)
+
+## Some More Interactive Widgets
+# Slider also has callback properties using on_change feature.
+slider_value = st.slider("This is a slider", min_value=50, max_value=75, value=61)
+st.write(slider_value)
+
+text = st.text_input("Enter your course title.", max_chars=100)
+text_area = st.text_area("Course Description:")
+date_input = st.date_input("Enter the date")
+time_input = st.time_input("Enter time")
+st.write(text, text_area, date_input, time_input)
+
+## Timer App With Progress Bar

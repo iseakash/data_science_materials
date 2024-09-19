@@ -49,3 +49,17 @@ st.markdown("""
 3. To define a button, use this: ```st.button("label", on_click=function_name_to_be_called)```. *Note* - It calls the mentioned function.
 4. To define a selectbox, use this: ```st.selectbox("label", options=("US","UK","IND"))```. *Note* - It returns only one selected value.
 5. To define a multiselect, use this: ```st.multiselect("label", options=("US","UK","IND"))```. *Note* - It returns multiple selected values.
+
+## File Uploader Widget of Streamlit
+1. To define a file_uploader, use this: ```st.file_uploader("label", type=["png","jpg"], accept_multiple_files=True)```. *Note* - To upload single file, use ```accept_multiple_files=False``` & to upload a video file, use ```type="mp4"```.
+2. To define a slider, use this: ```st.slider("label",  min_value=50, max_value=75, value=61)```.
+    - Slider also has callback properties using on_change feature.
+    - Slider is different from select_slider.
+2. To define a text,
+    - Use this: ```st.text_input("label",  max_chars=100)```
+    - For more descriptive text , use this: ```st.text_area("label")```
+    - *Note* : Use ```Enter``` to move to next line in ```text_area``` which is not possible in ```text_input```
+3. To define a date_input, use this: ```st.date_input("label")```
+4. To define a time_input, use this: ```st.time_input("label")```
+
+## Timer App With Progress Bar
