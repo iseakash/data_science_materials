@@ -10,7 +10,10 @@
 3. To define a header, use this: ```st.header("Message")```.
 4. To define a subheader, use this: ```st.subheader("Message")```. 
 5. To define a text, use this: ```st.text("Message")```.
-6. To define a markdown, use this: ```st.markdown("> **Bold Message**, *Italic Message* ")```. [Refer here for different markdown elements.](https://www.markdownguide.org/cheat-sheet/)
+6. To define a markdown, use this:
+    - ```st.markdown("> **Bold Message**, *Italic Message* ")```.
+    - ```st.markdown("<h1 style='text-align: center'>label</h1>", unsafe_allow_html=True)```
+    - [Refer here for different markdown elements.](https://www.markdownguide.org/cheat-sheet/)
 7. To define a mathematical formula, use this: ```st.latex("Formula")```. [Refer here for Latex Formula syntax](https://katex.org/docs/supported)
 8. To define a json body, use this: ```st.json("Enter json message")```.
 9. To define a python code, use this: ```st.code("Enter code")```.
@@ -66,3 +69,29 @@ st.markdown("""
 1. To define a progress bar, use this: ```st.progress("integer value")```
 2. To empty the status, use this: ```st.empty()```
     - Use the combination of ```status = st.empty() & status.write(value)``` to display the progress bar value.
+
+## Streamlit Forms
+1. To create a form, use either of the two codes:
+    ```python
+      form = st.form("key")
+      form.text_input("label")
+      form.form_submit_button("label")
+    ``` 
+    ```python
+    with st.form("key"):
+        st.text_input("label")
+        st.form_submit_button("label")
+    ```
+    - Without ````form_submit_button````, the form will give error in both case.
+2. To create a form with two columns, use this:
+    ```python
+      with st.form("key", clear_on_submit=True):
+        col1, col2 = st.columns(2)
+        col1.text_input("label1")
+        col2.text_input("label2")
+        st.form_submit_button("label")
+    ```
+3. After form submission to display a message, use this:
+    - ```st.warning("message")```
+    - ```st.success("message")```
+    - ```st.error("message")```
