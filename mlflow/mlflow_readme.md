@@ -19,3 +19,6 @@
     - ```mlflow run . --no-conda``` or
     - ```mlflow run github_repo_link``` or
     - ```mlflow run github_repo_link -P param1=3 --no-conda```.
+3. To run the mlflow ui in local:
+    ```mlflow ui```
+    
