@@ -8,3 +8,4 @@ entry_points:
                 param1: {type: int, default: 2}
                 param2: {type: int, default: 5}
         command: "python demo.py -p1 {param1} -p2 {param2}"
+        
