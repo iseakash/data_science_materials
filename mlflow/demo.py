@@ -4,7 +4,7 @@ import argparse
 import time
 
 def evaluate(param1, param2):
-    metric = param1**2 + param2**2
+    metric = param1 ** 2 + param2 ** 2
     return metric
 
 def main(p1, p2):
@@ -27,4 +27,3 @@ if __name__ == '__main__':
     parsed_args = args.parse_args()
 
     main(parsed_args.param1, parsed_args.param2)
-

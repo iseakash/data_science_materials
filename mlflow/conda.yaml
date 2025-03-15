@@ -1,4 +1,4 @@
-name: mlflowprojectdemo
+name: sampleDemo
 channels:
   - defaults
 dependencies:
