@@ -8,10 +8,13 @@
 
 ## chromaDB
     - chroma is open source
-    - Start by installtion: ```pip install chromadb```
+    - Start by installtion: 
+        ```
+        pip install chromadb
+        ```
     - Run this command to start the chromaDB server locally:
-        ```python
-            chroma run --path ./chromadb_data
+        ```
+        chroma run --path ./chromadb_data
         ```
     - Start with client to check connection with the vector db
     - Create a collection to store all the vectors (embedded)
