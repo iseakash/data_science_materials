@@ -10,7 +10,9 @@
     - chroma is open source
     - Start by installtion: ```pip install chromadb```
     - Run this command to start the chromaDB server locally:
-        ```chroma run --path ./chromadb_data```
+        ```python
+            chroma run --path ./chromadb_data
+        ```
     - Start with client to check connection with the vector db
     - Create a collection to store all the vectors (embedded)
     - Define doc, convert it to embeddings using any LLM, write these details into vector db collection
