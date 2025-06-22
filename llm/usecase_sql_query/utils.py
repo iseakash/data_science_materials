@@ -6,11 +6,6 @@ from typing import Tuple, List
 from config import EURI_API_KEY, EURI_API_URL, MODEL_NAME
 
 
-    schema = ""
-    for table in meta.tables.values():
-        schema += f"\nTable: {table.name}\nColumns: {', '.join([col.name + ' (' + str(col.type) + ')' for col in table.columns])}\n"
-    return schema.strip()
-
 def get_db_schema(engine: Engine) -> str:
     """
     Generates a textual representation of the database schema.
