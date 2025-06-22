@@ -80,4 +80,12 @@ Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkli
 2. Create **config.py** file to load the environemnt variables and define the model name and LLM url.
 3. Create **utils.py** file to define the supporting functions like get_db_schema(), call_euri_llm(), and execute_sql().
 4. Create **requirements.txt** file to add the list of libraries required to run the application.
+5. Create **prompt_template.txt** file to curate the prompt based on the table schema and user query while passing to the llm.
 
+
+### Streamlit SQL Assistant Workflow
+1. **Page Setup**: Configures app title and wide layout for better user experience.
+2. **User Input & Context**: Displays a question box and fetches database schema for context.
+3. **Prompt & SQL Generation**: Reads a template, formats it with schema and question, then calls the API to generate SQL.
+4. **Display & Execution**: Shows the generated SQL, executes it, and displays results or a message if no data.
+5. **Error Handling**: Catches and reports errors during SQL execution.
