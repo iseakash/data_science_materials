@@ -75,7 +75,7 @@ Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkli
     (3, 3, 1, 150.00);
     ```
  
- ### Create supporting files
+ ### Create Supporting files
 1. Create **.env** file to store the *LLM api key* and *Neon connection string*.
 2. Create **config.py** file to load the environemnt variables and define the model name and LLM url.
 3. Create **utils.py** file to define the supporting functions like get_db_schema(), call_euri_llm(), and execute_sql().
@@ -89,3 +89,7 @@ Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkli
 3. **Prompt & SQL Generation**: Reads a template, formats it with schema and question, then calls the API to generate SQL.
 4. **Display & Execution**: Shows the generated SQL, executes it, and displays results or a message if no data.
 5. **Error Handling**: Catches and reports errors during SQL execution.
+
+### How to Run?
+1. Execute the command in the terminal: ```streamlit run main.py```
+2. Open the URL in the browser and start querying the database.
