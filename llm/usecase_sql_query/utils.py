@@ -1,7 +1,6 @@
 import requests
 from sqlalchemy import text, MetaData
-# from sqlalchemy.engine import Engine
-# from sqlalchemy.sql import text
+from sqlalchemy.engine import Engine
 from typing import Tuple, List
 from config import EURI_API_KEY, EURI_API_URL, MODEL_NAME
 
