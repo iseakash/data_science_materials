@@ -12,6 +12,26 @@ st.title("🧠 SQL-Powered Data Retrieval Assistant")
 # Create a text input box for the user to ask questions in natural language
 nl_query = st.text_input("Ask your question (in natural language):")
 
+import speech_recognition as sr
+
+# Existing text input
+nl_query = st.text_input("Ask your question (in natural language):")
+
+# Voice input button
+if st.button("Speak your question"):
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        st.info("Listening...")
+        audio = recognizer.listen(source)
+    try:
+        voice_input = recognizer.recognize_google(audio)
+        st.success(f"You said: {voice_input}")
+        nl_query = voice_input  # Override text input with voice input
+    except sr.UnknownValueError:
+        st.error("Sorry, I couldn't understand the audio.")
+    except sr.RequestError as e:
+        st.error(f"Could not request results; {e}")
+
 # streamlit run main.py
 if nl_query:
     # Create a SQLAlchemy engine instance connected to the database using the provided URI
