@@ -15,8 +15,9 @@ UI Client (Streamlit) >(query in Eng lang)> LLM (Euriai/Openai) >> SQL Query (me
 Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkling-art-71623961
 
 ### Steps to use Neon
-1. Navigate to **SQL Editor** to write/run new query and **Tables** to browse the created tables.
-2. Write and run a query to create all new tables:
+1. Copy the *connection string* from the Neon by clicking on **Connect**.
+2. Navigate to **SQL Editor** to write/run new query and **Tables** to browse the created tables.
+3. Write and run a query to create all new tables:
     ```sql
     CREATE TABLE customers (
         customer_id SERIAL PRIMARY KEY,
@@ -48,7 +49,7 @@ Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkli
         price DECIMAL(10, 2)
     );
     ```
-3. Objective is to query from the table, so write and run a query to write some data into all the tables:
+4. Objective is to query from the table, so write and run a query to write some data into all the tables:
     ```sql
     INSERT INTO customers (name, email, phone, city) VALUES
     ('Alice Johnson', 'alice@gmail.com', '999-111-2222', 'New York'),
@@ -73,4 +74,10 @@ Note: Using Neon for this usecase https://console.neon.tech/app/projects/sparkli
     (3, 4, 1, 300.00),
     (3, 3, 1, 150.00);
     ```
-4. 
+ 
+ ### Create supporting files
+1. Create **.env** file to store the *LLM api key* and *Neon connection string*.
+2. Create **config.py** file to load the environemnt variables and define the model name and LLM url.
+3. Create **utils.py** file to define the supporting functions like get_db_schema(), call_euri_llm(), and execute_sql().
+4. Create **requirements.txt** file to add the list of libraries required to run the application.
+
