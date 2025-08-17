@@ -6,6 +6,7 @@
     - chromaDB - https://www.trychroma.com/
     - pinecone - https://www.pinecone.io/
     - weaviate - https://weaviate.io/
+    - qdrant - https://qdrant.tech/
 
 ## chromaDB
 - chroma is open source
@@ -22,3 +23,13 @@
 - faiss is open source and is developed by facebook
 - Start by installation:
 ```pip install faiss-cpu```
+
+## Qdrant
+- Create a free cluster with any name, which will be ready in 2-3 minutes
+- Save the API key and the usage example in python
+- Start by installation:
+```pip install qdrant_client```
+- Run ```qdrant_client``` in terminal or jupyter cell to see if it is working or not
+- Recreate the collection with defined configuration like vector size, similarity search type, etc
+- Prepare data (embeddings & metadata) into point list and upset into the collection (table)
+- Convery the user query into embeddings and return top search items
