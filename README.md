@@ -52,3 +52,9 @@ All content related to data science for quick reference.
 ## ML Flow: 
 	1. Track data & model performance
 	2. Save ml models
+
+## Vector Database:
+	1. FAISS
+	2. Qdrant
+	3. ChromaDB
+	4. Pinecone
